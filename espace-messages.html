@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr" data-protected>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<script>window.__resources={"https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js": "assets/js/react.production.min.js", "https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/js/react-dom.production.min.js"};</script>
+<script src="assets/js/auth.js"></script>
+<title>Messages – Portail des institutions</title>
+<script src="assets/js/dc-runtime.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/pjs-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/pjs-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/pjs-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/pjs-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/pjs-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/pjs-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/pjs-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/pjs-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/pjs-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/pjs-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+a{color:#0F7A4F}a:hover{color:#063B26}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #F5C02F;outline-offset:3px}
+.ige-field{transition:border-color .2s, box-shadow .2s, background .2s}
+.ige-field:focus-within{border-color:#0F7A4F !important;background:#FFFFFF !important;box-shadow:0 0 0 4px rgba(15,122,79,0.12)}
+.ige-switch{appearance:none;-webkit-appearance:none;flex:none;width:40px;height:24px;margin:0;border-radius:999px;background:#D2DED7;position:relative;cursor:pointer;transition:background .2s}
+.ige-switch::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#FFFFFF;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:left .2s}
+.ige-switch:checked{background:#0F7A4F}.ige-switch:checked::after{left:19px}
+.ige-btn{transition:transform .15s, box-shadow .15s, background .15s}.ige-btn:hover{transform:translateY(-1px)}
+.ige-nl2:hover{background:#F2F9F5}
+html,body{background:#063B26}
+.ige-row{display:flex;flex-wrap:wrap;align-items:center;gap:24px 90px}
+.ige-rev{flex-direction:row-reverse}
+.ige-stage{flex:1 1 420px;min-width:0;display:flex;justify-content:center}
+.ige-box{position:relative;width:460px;max-width:100%;height:350px}
+@keyframes igeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.ige-float{animation:igeFloat 6s ease-in-out infinite}
+.ige-float2{animation:igeFloat 7s ease-in-out -2s infinite}
+@media (prefers-reduced-motion:reduce){.ige-float,.ige-float2{animation:none}}
+@media (max-width:980px){.ige-hide-md{display:none !important}}
+@media (max-width:760px){.ige-rev{flex-direction:row}.ige-hide-sm{display:none !important}}
+.ige-task{transition:background .15s}.ige-task:hover{background:#F8FBF9}
+.ige-link:hover{text-decoration:underline}
+.ige-mgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.ige-split{display:grid;grid-template-columns:320px minmax(0,1fr);gap:20px;align-items:start}
+.ige-tabbar{display:flex;gap:4px;overflow-x:auto}
+@media (max-width:980px){.ige-split{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){.ige-mgrid{grid-template-columns:minmax(0,1fr)}}
+.s-fl:hover{color:#FFFFFF !important;text-decoration:underline !important}
+/* responsive mobile */
+html,body{overflow-x:hidden}
+img{max-width:100%}
+@media (max-width:760px){
+header nav{width:100%;order:3;flex-wrap:nowrap !important;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+header nav::-webkit-scrollbar{display:none}
+header nav a{white-space:nowrap;flex:none}
+header img{height:38px !important}
+h1{font-size:28px !important;line-height:1.15 !important}
+h2{word-break:break-word}
+[style*="padding: 52px 48px"],[style*="padding: 48px;"],[style*="padding: 40px 44px"],[style*="padding: 60px 44px"],[style*="padding: 56px 40px"]{padding:28px 22px !important}
+[style*="padding: 30px 32px"],[style*="padding: 34px 36px"],[style*="padding: 22px 32px"],[style*="padding: 30px 34px"],[style*="padding: 28px 30px"],[style*="padding: 64px 44px 36px"]{padding:22px 18px !important}
+[style*="padding: 26px 28px"],[style*="padding: 24px 28px"]{padding:20px 18px !important}
+[style*="gap: 32px 48px"],[style*="gap: 28px 48px"],[style*="gap: 24px 36px"],[style*="gap: 40px 56px"]{gap:20px !important}
+}
+@media (max-width:420px){
+[style*="min-width: 112px"],[style*="min-width: 150px"]{min-width:0 !important}
+}
+</style>
+</helmet>
+<div style="background: #FFFFFF; color: #0B2A1C; font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.55">
+<section style="position: relative; overflow: hidden; background: #0F6B45; color: #FFFFFF; padding-bottom: 100px">
+<svg aria-hidden="true" viewBox="0 0 1440 620" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%">
+<defs>
+<radialGradient id="igeHl" cx="78%" cy="0%" r="70%"><stop offset="0" stop-color="#2FA36F" stop-opacity="0.9"></stop><stop offset="1" stop-color="#2FA36F" stop-opacity="0"></stop></radialGradient>
+<radialGradient id="igeSh" cx="10%" cy="100%" r="60%"><stop offset="0" stop-color="#063B26" stop-opacity="0.75"></stop><stop offset="1" stop-color="#063B26" stop-opacity="0"></stop></radialGradient>
+<pattern id="igeDots" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#FFFFFF" opacity="0.06"></circle></pattern>
+</defs>
+<rect width="1440" height="620" fill="url(#igeHl)"></rect>
+<rect width="1440" height="620" fill="url(#igeSh)"></rect>
+<rect width="1440" height="620" fill="url(#igeDots)"></rect>
+<g fill="none" stroke="#FFFFFF" opacity="0.10">
+<circle cx="720" cy="360" r="300"></circle>
+</g>
+</svg>
+<div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 18px 20px 0">
+<header style="display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between; padding: 10px 10px 10px 16px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 6px 16px -10px rgba(3,30,19,0.35)">
+<a href="espace-accueil.html" style="display: flex; align-items: center; text-decoration: none"><img src="assets/img/logo-igf.png" alt="IGF – Portail des institutions" style="height: 46px; width: auto; display: block"></a>
+<nav aria-label="Espace" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2px; font-size: 13.5px; font-weight: 700"><a href="espace-accueil.html" class="ige-nl2" style="display: inline-flex; align-items: center; color: #1B3A2B; text-decoration: none; padding: 10px 14px; border-radius: 12px">Accueil</a><a href="espace-missions.html" class="ige-nl2" style="display: inline-flex; align-items: center; color: #1B3A2B; text-decoration: none; padding: 10px 14px; border-radius: 12px">Mes missions</a><a href="espace-demandes.html" class="ige-nl2" style="display: inline-flex; align-items: center; color: #1B3A2B; text-decoration: none; padding: 10px 14px; border-radius: 12px">Demandes</a><a href="espace-transmissions.html" class="ige-nl2" style="display: inline-flex; align-items: center; color: #1B3A2B; text-decoration: none; padding: 10px 14px; border-radius: 12px">Transmissions</a><a href="espace-messages.html" aria-current="page" style="display: inline-flex; align-items: center; color: #0F7A4F; text-decoration: none; padding: 10px 14px; border-radius: 12px; background: #E5F4EC">Messages</a><a href="espace-dossiers.html" class="ige-nl2" style="display: inline-flex; align-items: center; color: #1B3A2B; text-decoration: none; padding: 10px 14px; border-radius: 12px">Dossiers</a></nav>
+<div style="display: flex; align-items: center; gap: 6px">
+<a href="#" aria-label="Mon profil : Mariem Mint Ahmed" style="display: inline-flex; width: 44px; height: 44px; border-radius: 50%; background: #F5C02F; color: #2E2300; font-size: 12px; font-weight: 800; align-items: center; justify-content: center; text-decoration: none">MA</a>
+<a href="index.html" aria-label="Se déconnecter" style="display: inline-flex; width: 44px; height: 44px; border-radius: 12px; align-items: center; justify-content: center; color: #1B3A2B"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path></svg></a>
+</div>
+</header>
+</div>
+<div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 34px 24px 0; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 24px">
+<div style="display: flex; flex-direction: column; gap: 8px; min-width: 0">
+<nav aria-label="Fil d’Ariane" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #BFE3CF"><a href="espace-accueil.html" style="color: #BFE3CF; text-decoration: none">Accueil</a><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg><span style="color: #FFFFFF">Messages</span></nav>
+<h1 style="margin: 0; font-weight: 800; font-size: clamp(26px, 3vw, 36px); line-height: 1.1; letter-spacing: -0.045em">Messages</h1>
+<p style="margin: 0; font-size: 14.5px; color: #D3EEDF">Vos échanges avec les équipes d’inspection, classés par demande.</p>
+</div>
+</div>
+</section>
+<main style="position: relative; z-index: 2; max-width: 1200px; margin: -64px auto 0; padding: 0 20px 72px">
+<div class="ige-split">
+<section aria-label="Conversations" style="background: #FFFFFF; border-radius: 20px; border: 1px solid #E7ECE9; overflow: hidden; box-shadow: 0 8px 20px -14px rgba(6,59,38,0.3)">
+<div style="padding: 14px; border-bottom: 1px solid #EEF2F0"><label for="cq" style="display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 0 14px; border-radius: 12px; background: #F3F6F4; cursor: text"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#889A90" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Rechercher</span><input id="cq" type="search" placeholder="Rechercher un échange" style="flex: 1; min-width: 0; border: 0; background: transparent; font: inherit; font-size: 13px; outline: none; min-height: 40px"></label></div>
+<ul style="list-style: none; margin: 0; padding: 6px"><li><button type="button" onClick="{{pick0}}" aria-current="{{cur0}}" style="{{st0}}">
+<span style="flex: none; width: 38px; height: 38px; border-radius: 50%; background: #E5F4EC; color: #0F7A4F; font-size: 12px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center">SC</span><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; text-align: left"><span style="display: flex; justify-content: space-between; gap: 8px"><b style="font-size: 13px; font-weight: 800">Sidi Mohamed Ould Cheikh</b><span style="flex: none; font-size: 11px; color: #889A90">09:42</span></span>
+<span style="font-size: 12px; font-weight: 700; color: #0F7A4F"># Relevés bancaires du 3ᵉ trimestre</span><span style="font-size: 12px; color: #556B60; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Merci de joindre les annexes au relevé du 3ᵉ trimestre.</span></span><span style="flex: none; width: 9px; height: 9px; margin-top: 6px; border-radius: 50%; background: #F5C02F"></span></button></li><li><button type="button" onClick="{{pick1}}" aria-current="{{cur1}}" style="{{st1}}">
+<span style="flex: none; width: 38px; height: 38px; border-radius: 50%; background: #FFF5D1; color: #7A5A00; font-size: 12px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center">FS</span><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; text-align: left"><span style="display: flex; justify-content: space-between; gap: 8px"><b style="font-size: 13px; font-weight: 700">Fatimetou Mint Salem</b><span style="flex: none; font-size: 11px; color: #889A90">Hier</span></span>
+<span style="font-size: 12px; font-weight: 700; color: #0F7A4F"># Procès-verbal de réception</span><span style="font-size: 12px; color: #556B60; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Le procès-verbal a bien été reçu, examen en cours.</span></span></button></li><li><button type="button" onClick="{{pick2}}" aria-current="{{cur2}}" style="{{st2}}">
+<span style="flex: none; width: 38px; height: 38px; border-radius: 50%; background: #FFF5D1; color: #7A5A00; font-size: 12px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center">FS</span><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; text-align: left"><span style="display: flex; justify-content: space-between; gap: 8px"><b style="font-size: 13px; font-weight: 700">Fatimetou Mint Salem</b><span style="flex: none; font-size: 11px; color: #889A90">12 nov.</span></span>
+<span style="font-size: 12px; font-weight: 700; color: #0F7A4F"># Contrats de marchés n° 12 à 18</span><span style="font-size: 12px; color: #556B60; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Merci de fournir les versions signées des contrats n° 15 et 16.</span></span></button></li><li><button type="button" onClick="{{pick3}}" aria-current="{{cur3}}" style="{{st3}}">
+<span style="flex: none; width: 38px; height: 38px; border-radius: 50%; background: #E5F4EC; color: #0F7A4F; font-size: 12px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center">SC</span><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; text-align: left"><span style="display: flex; justify-content: space-between; gap: 8px"><b style="font-size: 13px; font-weight: 700">Sidi Mohamed Ould Cheikh</b><span style="flex: none; font-size: 11px; color: #889A90">4 nov.</span></span>
+<span style="font-size: 12px; font-weight: 700; color: #0F7A4F"># Calendrier de la mission</span><span style="font-size: 12px; color: #556B60; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Le calendrier de la mission a été mis à jour.</span></span></button></li></ul>
+</section>
+<section aria-label="Conversation" style="background: #FFFFFF; border-radius: 20px; border: 1px solid #E7ECE9; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 8px 20px -14px rgba(6,59,38,0.3)">
+<sc-if value="{{th0}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; padding: 16px 22px; border-bottom: 1px solid #EEF2F0">
+<span style="display: flex; align-items: center; gap: 12px; min-width: 0"><span style="flex: none; width: 40px; height: 40px; border-radius: 50%; background: #E5F4EC; color: #0F7A4F; font-size: 12px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center">SC</span><span style="display: flex; flex-direction: column; min-width: 0"><b style="font-size: 14.5px">Relevés bancaires du 3ᵉ trimestre</b><span style="font-size: 12px; color: #556B60">Sidi Mohamed Ould Cheikh · Mission IGE-2026-041</span></span></span>
+<a href="espace-demandes.html" style="display: inline-flex; align-items: center; gap: 6px; min-height: 38px; padding: 0 12px; border-radius: 10px; color: #0F7A4F; box-shadow: inset 0 0 0 1.5px #CFE5D9; font-size: 12px; font-weight: 800; text-decoration: none">Voir la demande <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a></div>
+<div style="padding: 22px; display: flex; flex-direction: column; gap: 16px; min-height: 340px"><div style="display: flex; gap: 10px; align-items: flex-end"><span style="flex: none; width: 32px; height: 32px; border-radius: 50%; background: #E5F4EC; color: #0F7A4F; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center">SC</span><div style="max-width: 72%; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 11px; color: #889A90"><b style="color: #34493F">Sidi Mohamed Ould Cheikh</b> · 6 nov., 10:05</span><div style="padding: 12px 14px; border-radius: 16px 16px 16px 4px; background: #F3F6F4; font-size: 13px; line-height: 1.55">Pour les relevés bancaires, merci d’inclure tous les comptes ouverts au nom de l’institution.</div></div></div><div style="display: flex; gap: 10px; flex-direction: row-reverse; align-items: flex-end"><span style="flex: none; width: 32px; height: 32px; border-radius: 50%; background: #F5C02F; color: #2E2300; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center">MA</span><div style="max-width: 72%; display: flex; flex-direction: column; align-items: flex-end; gap: 4px"><span style="font-size: 11px; color: #889A90">Vous · 6 nov., 14:20</span><div style="padding: 12px 14px; border-radius: 16px 16px 4px 16px; background: #0F7A4F; color: #FFFFFF; font-size: 13px; line-height: 1.55">C’est noté. Les relevés seront transmis avant le 17 novembre.</div></div></div><div style="display: flex; gap: 10px; align-items: flex-end"><span style="flex: none; width: 32px; height: 32px; border-radius: 50%; background: #E5F4EC; color: #0F7A4F; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center">SC</span><div style="max-width: 72%; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 11px; color: #889A90"><b style="color: #34493F">Sidi Mohamed Ould Cheikh</b> · Aujourd’hui, 09:42</span><div style="padding: 12px 14px; border-radius: 16px 16px 16px 4px; background: #F3F6F4; font-size: 13px; line-height: 1.55">Merci de joindre les annexes au relevé du 3ᵉ trimestre.</div></div></div></div>
+</sc-if><sc-if value="{{th1}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; padding: 16px 22px; border-bottom: 1px solid #EEF2F0">
+<span style="display: flex; align-items: center; gap: 12px; min-width: 0"><span style="flex: none; width: 40px; height: 40px; border-radius: 50%; background: #FFF5D1; color: #7A5A00; font-size: 12px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center">FS</span><span style="display: flex; flex-direction: column; min-width: 0"><b style="font-size: 14.5px">Procès-verbal de réception</b><span style="font-size: 12px; color: #556B60">Fatimetou Mint Salem · Mission IGE-2026-037</span></span></span>
+<a href="espace-demandes.html" style="display: inline-flex; align-items: center; gap: 6px; min-height: 38px; padding: 0 12px; border-radius: 10px; color: #0F7A4F; box-shadow: inset 0 0 0 1.5px #CFE5D9; font-size: 12px; font-weight: 800; text-decoration: none">Voir la demande <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a></div>
+<div style="padding: 22px; display: flex; flex-direction: column; gap: 16px; min-height: 340px"><div style="display: flex; gap: 10px; flex-direction: row-reverse; align-items: flex-end"><span style="flex: none; width: 32px; height: 32px; border-radius: 50%; background: #F5C02F; color: #2E2300; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center">MA</span><div style="max-width: 72%; display: flex; flex-direction: column; align-items: flex-end; gap: 4px"><span style="font-size: 11px; color: #889A90">Vous · 10 nov., 15:04</span><div style="padding: 12px 14px; border-radius: 16px 16px 4px 16px; background: #0F7A4F; color: #FFFFFF; font-size: 13px; line-height: 1.55">Le procès-verbal de réception des travaux vient d’être déposé.<a href="#" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 6px; padding: 8px 12px; border-radius: 10px; background: rgba(255,255,255,0.16); color: inherit; font-size: 12px; font-weight: 700; text-decoration: none"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11l-9 9a5 5 0 0 1-7-7l9-9a3.5 3.5 0 0 1 5 5l-9 9a2 2 0 0 1-3-3l8-8"></path></svg>PV_reception_travaux.pdf</a></div></div></div><div style="display: flex; gap: 10px; align-items: flex-end"><span style="flex: none; width: 32px; height: 32px; border-radius: 50%; background: #FFF5D1; color: #7A5A00; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center">FS</span><div style="max-width: 72%; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 11px; color: #889A90"><b style="color: #34493F">Fatimetou Mint Salem</b> · Hier, 16:30</span><div style="padding: 12px 14px; border-radius: 16px 16px 16px 4px; background: #F3F6F4; font-size: 13px; line-height: 1.55">Le procès-verbal a bien été reçu, examen en cours.</div></div></div></div>
+</sc-if><sc-if value="{{th2}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; padding: 16px 22px; border-bottom: 1px solid #EEF2F0">
+<span style="display: flex; align-items: center; gap: 12px; min-width: 0"><span style="flex: none; width: 40px; height: 40px; border-radius: 50%; background: #FFF5D1; color: #7A5A00; font-size: 12px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center">FS</span><span style="display: flex; flex-direction: column; min-width: 0"><b style="font-size: 14.5px">Contrats de marchés n° 12 à 18</b><span style="font-size: 12px; color: #556B60">Fatimetou Mint Salem · Mission IGE-2026-037</span></span></span>
+<a href="espace-demandes.html" style="display: inline-flex; align-items: center; gap: 6px; min-height: 38px; padding: 0 12px; border-radius: 10px; color: #0F7A4F; box-shadow: inset 0 0 0 1.5px #CFE5D9; font-size: 12px; font-weight: 800; text-decoration: none">Voir la demande <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a></div>
+<div style="padding: 22px; display: flex; flex-direction: column; gap: 16px; min-height: 340px"><div style="display: flex; gap: 10px; align-items: flex-end"><span style="flex: none; width: 32px; height: 32px; border-radius: 50%; background: #FFF5D1; color: #7A5A00; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center">FS</span><div style="max-width: 72%; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 11px; color: #889A90"><b style="color: #34493F">Fatimetou Mint Salem</b> · 8 nov., 14:30</span><div style="padding: 12px 14px; border-radius: 16px 16px 16px 4px; background: #F3F6F4; font-size: 13px; line-height: 1.55">Merci de compléter le dépôt des contrats n° 12 à 18.</div></div></div><div style="display: flex; gap: 10px; flex-direction: row-reverse; align-items: flex-end"><span style="flex: none; width: 32px; height: 32px; border-radius: 50%; background: #F5C02F; color: #2E2300; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center">MA</span><div style="max-width: 72%; display: flex; flex-direction: column; align-items: flex-end; gap: 4px"><span style="font-size: 11px; color: #889A90">Vous · 11 nov., 10:22</span><div style="padding: 12px 14px; border-radius: 16px 16px 4px 16px; background: #0F7A4F; color: #FFFFFF; font-size: 13px; line-height: 1.55">Nouvelle version déposée avec les contrats disponibles.<a href="#" style="display: inline-flex; align-items: center; gap: 8px; margin-top: 6px; padding: 8px 12px; border-radius: 10px; background: rgba(255,255,255,0.16); color: inherit; font-size: 12px; font-weight: 700; text-decoration: none"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11l-9 9a5 5 0 0 1-7-7l9-9a3.5 3.5 0 0 1 5 5l-9 9a2 2 0 0 1-3-3l8-8"></path></svg>Contrats_12-18_v2.zip</a></div></div></div><div style="display: flex; gap: 10px; align-items: flex-end"><span style="flex: none; width: 32px; height: 32px; border-radius: 50%; background: #FFF5D1; color: #7A5A00; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center">FS</span><div style="max-width: 72%; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 11px; color: #889A90"><b style="color: #34493F">Fatimetou Mint Salem</b> · 12 nov., 09:15</span><div style="padding: 12px 14px; border-radius: 16px 16px 16px 4px; background: #F3F6F4; font-size: 13px; line-height: 1.55">Merci de fournir les versions signées des contrats n° 15 et 16.</div></div></div></div>
+</sc-if><sc-if value="{{th3}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; padding: 16px 22px; border-bottom: 1px solid #EEF2F0">
+<span style="display: flex; align-items: center; gap: 12px; min-width: 0"><span style="flex: none; width: 40px; height: 40px; border-radius: 50%; background: #E5F4EC; color: #0F7A4F; font-size: 12px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center">SC</span><span style="display: flex; flex-direction: column; min-width: 0"><b style="font-size: 14.5px">Calendrier de la mission</b><span style="font-size: 12px; color: #556B60">Sidi Mohamed Ould Cheikh · Mission IGE-2026-041</span></span></span>
+<a href="espace-demandes.html" style="display: inline-flex; align-items: center; gap: 6px; min-height: 38px; padding: 0 12px; border-radius: 10px; color: #0F7A4F; box-shadow: inset 0 0 0 1.5px #CFE5D9; font-size: 12px; font-weight: 800; text-decoration: none">Voir la demande <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></a></div>
+<div style="padding: 22px; display: flex; flex-direction: column; gap: 16px; min-height: 340px"><div style="display: flex; gap: 10px; align-items: flex-end"><span style="flex: none; width: 32px; height: 32px; border-radius: 50%; background: #E5F4EC; color: #0F7A4F; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center">SC</span><div style="max-width: 72%; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 11px; color: #889A90"><b style="color: #34493F">Sidi Mohamed Ould Cheikh</b> · 4 nov., 11:15</span><div style="padding: 12px 14px; border-radius: 16px 16px 16px 4px; background: #F3F6F4; font-size: 13px; line-height: 1.55">Le calendrier de la mission a été mis à jour : fin des transmissions le 5 décembre.</div></div></div><div style="display: flex; gap: 10px; flex-direction: row-reverse; align-items: flex-end"><span style="flex: none; width: 32px; height: 32px; border-radius: 50%; background: #F5C02F; color: #2E2300; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center">MA</span><div style="max-width: 72%; display: flex; flex-direction: column; align-items: flex-end; gap: 4px"><span style="font-size: 11px; color: #889A90">Vous · 5 nov., 08:30</span><div style="padding: 12px 14px; border-radius: 16px 16px 4px 16px; background: #0F7A4F; color: #FFFFFF; font-size: 13px; line-height: 1.55">Bien noté, merci.</div></div></div></div>
+</sc-if>
+<form onSubmit="{{noop}}" style="display: flex; align-items: flex-end; gap: 10px; margin: 0 22px 22px; padding: 8px 8px 8px 16px; border-radius: 16px; border: 1.5px solid #E0EBE5">
+<label for="rep" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Votre réponse</label>
+<textarea id="rep" rows="2" placeholder="Écrire une réponse…" style="flex: 1; border: 0; resize: none; font: inherit; font-size: 13.5px; padding: 8px 0; outline: none; background: transparent"></textarea>
+<button type="button" aria-label="Joindre un fichier" style="flex: none; width: 42px; height: 42px; border: 0; border-radius: 11px; background: #F3F6F4; color: #34493F; cursor: pointer; display: inline-flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11l-9 9a5 5 0 0 1-7-7l9-9a3.5 3.5 0 0 1 5 5l-9 9a2 2 0 0 1-3-3l8-8"></path></svg></button>
+<button type="submit" style="flex: none; display: inline-flex; align-items: center; gap: 8px; min-height: 42px; padding: 0 16px; border: 0; border-radius: 11px; background: #0F7A4F; color: #FFFFFF; font: inherit; font-size: 13px; font-weight: 800; cursor: pointer">Envoyer <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"></path></svg></button>
+</form>
+</section>
+</div>
+</main>
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer style="background: #063B26; color: #A9C9BB">
+<div style="max-width: 1200px; margin: 0 auto; padding: 48px 24px 36px; display: flex; flex-wrap: wrap; gap: 32px 48px">
+<div style="flex: 1.6 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<span style="display: flex; align-items: center; gap: 14px"><span style="display: inline-flex; padding: 7px; border-radius: 14px; background: #FFFFFF"><img src="assets/img/logo-igf-mark.png" alt="" style="width: 40px; height: 40px; display: block"></span>
+<span style="display: flex; flex-direction: column; gap: 5px; line-height: 1.15"><b style="font-size: 16px; color: #FFFFFF">IGF</b><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase">Portail des institutions</span></span></span>
+<p style="margin: 0; max-width: 320px; font-size: 13.5px; line-height: 1.6">L’espace officiel d’échange entre l’Inspection et les institutions contrôlées.</p>
+</div>
+<nav aria-label="Mon espace" style="flex: 1 1 150px; min-width: 0; display: flex; flex-direction: column; gap: 2px; font-size: 13.5px"><b style="font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #F5C02F; margin-bottom: 8px">Mon espace</b><a href="espace-accueil.html" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 5px 0">Tableau de bord</a><a href="espace-missions.html" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 5px 0">Mes missions</a><a href="espace-demandes.html" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 5px 0">Demandes</a><a href="espace-messages.html" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 5px 0">Messages</a><a href="espace-dossiers.html" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 5px 0">Dossiers</a></nav><nav aria-label="Compte" style="flex: 1 1 150px; min-width: 0; display: flex; flex-direction: column; gap: 2px; font-size: 13.5px"><b style="font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #F5C02F; margin-bottom: 8px">Compte</b><a href="#" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 5px 0">Mon profil</a><a href="#" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 5px 0">Changer le mot de passe</a><a href="index.html" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 5px 0">Se déconnecter</a></nav>
+<div style="flex: 1 1 230px; min-width: 0; display: flex; flex-direction: column; gap: 10px; padding: 18px; border-radius: 16px; background: rgba(255,255,255,0.06)">
+<b style="font-size: 14px; color: #FFFFFF">Assistance</b>
+<span style="display: flex; align-items: center; gap: 10px; font-size: 13px; color: #DCEBE4"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5C02F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>[téléphone]</span>
+<span style="display: flex; align-items: center; gap: 10px; font-size: 13px; color: #DCEBE4"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5C02F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>[adresse email]</span>
+<span style="display: flex; align-items: center; gap: 10px; font-size: 13px; color: #DCEBE4"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5C02F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>Nouakchott, Mauritanie</span>
+</div>
+</div>
+<div style="background: #052F1E">
+<div style="max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 24px; font-size: 12.5px">
+<span>© 2026 République Islamique de Mauritanie · Dernière connexion : 12 nov. 2026, 08:14</span>
+<nav aria-label="Liens légaux" style="display: flex; flex-wrap: wrap; gap: 4px 20px"><a href="#" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 6px 0">Mentions légales</a><a href="#" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 6px 0">Confidentialité</a><a href="#" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 6px 0">Accessibilité</a></nav>
+<span style="font-size: 11px; font-weight: 800; letter-spacing: 0.14em; color: #F5C02F">HONNEUR · FRATERNITÉ · JUSTICE</span>
+</div></div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1300}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { c: 0 }; }
+  renderVals() { return (() => {
+      const cur = this.state.c || 0;
+      const v = { noop: (e) => { if (e && e.preventDefault) e.preventDefault(); } };
+      for (let i = 0; i < 4; i++) {
+        const on = i === cur;
+        v['th' + i] = on;
+        v['cur' + i] = on ? 'true' : 'false';
+        v['pick' + i] = () => this.setState({ c: i });
+        v['st' + i] = 'display:flex;gap:12px;align-items:flex-start;width:100%;padding:12px;border:0;border-radius:14px;font:inherit;color:#0B2A1C;cursor:pointer;' + (on ? 'background:#E5F4EC;' : 'background:transparent;');
+      }
+      return v;
+    })(); }
+}
+</script>
+</body>
+</html>

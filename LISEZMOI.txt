@@ -1,0 +1,26 @@
+PORTAIL DES INSTITUTIONS – IGF
+=================================
+
+Déploiement
+  Copier tout le contenu du dossier (fichiers .html + dossier assets) à la racine
+  d'un hébergement web statique (Apache, Nginx, IIS, GitHub Pages, Netlify…).
+  Page d'entrée : index.html
+  Test en local : python3 -m http.server 8080  puis ouvrir http://localhost:8080
+
+Compte de démonstration
+  Identifiant  : mariem.ahmed@institution.mr
+  Mot de passe : Portail@2026
+
+Les comptes se modifient dans assets/js/auth.js (liste ACCOUNTS).
+
+IMPORTANT
+  Cette connexion est une démonstration vérifiée dans le navigateur : elle n'est pas
+  sécurisée. Pour la mise en production, l'authentification doit être faite par un
+  serveur (et les données venir du système de gestion de l'IGF).
+
+Pages
+  index.html              Accueil (avant connexion)
+  fonctionnalites.html    Fonctionnalités
+  suivi.html              Suivi des pièces
+  connexion.html          Connexion
+  espace-*.html           Espace connecté (accès après connexion)

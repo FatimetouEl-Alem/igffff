@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fr" data-protected>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<script>window.__resources={"https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js": "assets/js/react.production.min.js", "https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/js/react-dom.production.min.js"};</script>
+<script src="assets/js/auth.js"></script>
+<title>Demandes – Portail des institutions</title>
+<script src="assets/js/dc-runtime.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/pjs-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/pjs-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/pjs-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/pjs-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/pjs-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/pjs-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/pjs-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/pjs-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/pjs-cyrillic-ext.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/pjs-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("assets/fonts/pjs-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<style>
+body{margin:0}
+*{box-sizing:border-box}
+a{color:#0F7A4F}a:hover{color:#063B26}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #F5C02F;outline-offset:3px}
+.ige-field{transition:border-color .2s, box-shadow .2s, background .2s}
+.ige-field:focus-within{border-color:#0F7A4F !important;background:#FFFFFF !important;box-shadow:0 0 0 4px rgba(15,122,79,0.12)}
+.ige-switch{appearance:none;-webkit-appearance:none;flex:none;width:40px;height:24px;margin:0;border-radius:999px;background:#D2DED7;position:relative;cursor:pointer;transition:background .2s}
+.ige-switch::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#FFFFFF;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:left .2s}
+.ige-switch:checked{background:#0F7A4F}.ige-switch:checked::after{left:19px}
+.ige-btn{transition:transform .15s, box-shadow .15s, background .15s}.ige-btn:hover{transform:translateY(-1px)}
+.ige-nl2:hover{background:#F2F9F5}
+html,body{background:#063B26}
+.ige-row{display:flex;flex-wrap:wrap;align-items:center;gap:24px 90px}
+.ige-rev{flex-direction:row-reverse}
+.ige-stage{flex:1 1 420px;min-width:0;display:flex;justify-content:center}
+.ige-box{position:relative;width:460px;max-width:100%;height:350px}
+@keyframes igeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.ige-float{animation:igeFloat 6s ease-in-out infinite}
+.ige-float2{animation:igeFloat 7s ease-in-out -2s infinite}
+@media (prefers-reduced-motion:reduce){.ige-float,.ige-float2{animation:none}}
+@media (max-width:980px){.ige-hide-md{display:none !important}}
+@media (max-width:760px){.ige-rev{flex-direction:row}.ige-hide-sm{display:none !important}}
+.ige-task{transition:background .15s}.ige-task:hover{background:#F8FBF9}
+.ige-link:hover{text-decoration:underline}
+.ige-mgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.ige-split{display:grid;grid-template-columns:320px minmax(0,1fr);gap:20px;align-items:start}
+.ige-tabbar{display:flex;gap:4px;overflow-x:auto}
+@media (max-width:980px){.ige-split{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:760px){.ige-mgrid{grid-template-columns:minmax(0,1fr)}}
+.s-fl:hover{color:#FFFFFF !important;text-decoration:underline !important}
+.s-row{transition:border-color .2s}.s-row:hover{border-color:#BFDCCD}
+.dm-split{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:18px;align-items:start}
+@media (max-width:1000px){.dm-split{grid-template-columns:minmax(0,1fr)}}
+/* responsive mobile */
+html,body{overflow-x:hidden}
+img{max-width:100%}
+@media (max-width:760px){
+header nav{width:100%;order:3;flex-wrap:nowrap !important;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+header nav::-webkit-scrollbar{display:none}
+header nav a{white-space:nowrap;flex:none}
+header img{height:38px !important}
+h1{font-size:28px !important;line-height:1.15 !important}
+h2{word-break:break-word}
+[style*="padding: 52px 48px"],[style*="padding: 48px;"],[style*="padding: 40px 44px"],[style*="padding: 60px 44px"],[style*="padding: 56px 40px"]{padding:28px 22px !important}
+[style*="padding: 30px 32px"],[style*="padding: 34px 36px"],[style*="padding: 22px 32px"],[style*="padding: 30px 34px"],[style*="padding: 28px 30px"],[style*="padding: 64px 44px 36px"]{padding:22px 18px !important}
+[style*="padding: 26px 28px"],[style*="padding: 24px 28px"]{padding:20px 18px !important}
+[style*="gap: 32px 48px"],[style*="gap: 28px 48px"],[style*="gap: 24px 36px"],[style*="gap: 40px 56px"]{gap:20px !important}
+}
+@media (max-width:420px){
+[style*="min-width: 112px"],[style*="min-width: 150px"]{min-width:0 !important}
+}
+</style>
+</helmet>
+<div style="background: #FFFFFF; color: #0B2A1C; font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.55">
+<section style="position: relative; overflow: hidden; background: #0F6B45; color: #FFFFFF; padding-bottom: 100px">
+<svg aria-hidden="true" viewBox="0 0 1440 620" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%">
+<defs>
+<radialGradient id="igeHl" cx="78%" cy="0%" r="70%"><stop offset="0" stop-color="#2FA36F" stop-opacity="0.9"></stop><stop offset="1" stop-color="#2FA36F" stop-opacity="0"></stop></radialGradient>
+<radialGradient id="igeSh" cx="10%" cy="100%" r="60%"><stop offset="0" stop-color="#063B26" stop-opacity="0.75"></stop><stop offset="1" stop-color="#063B26" stop-opacity="0"></stop></radialGradient>
+<pattern id="igeDots" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#FFFFFF" opacity="0.06"></circle></pattern>
+</defs>
+<rect width="1440" height="620" fill="url(#igeHl)"></rect>
+<rect width="1440" height="620" fill="url(#igeSh)"></rect>
+<rect width="1440" height="620" fill="url(#igeDots)"></rect>
+<g fill="none" stroke="#FFFFFF" opacity="0.10">
+<circle cx="720" cy="360" r="300"></circle>
+</g>
+</svg>
+<div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 18px 20px 0">
+<header style="display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between; padding: 10px 10px 10px 16px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 6px 16px -10px rgba(3,30,19,0.35)">
+<a href="espace-accueil.html" style="display: flex; align-items: center; text-decoration: none"><img src="assets/img/logo-igf.png" alt="IGF – Portail des institutions" style="height: 46px; width: auto; display: block"></a>
+<nav aria-label="Espace" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2px; font-size: 13.5px; font-weight: 700"><a href="espace-accueil.html" class="ige-nl2" style="display: inline-flex; align-items: center; color: #1B3A2B; text-decoration: none; padding: 10px 14px; border-radius: 12px">Accueil</a><a href="espace-missions.html" class="ige-nl2" style="display: inline-flex; align-items: center; color: #1B3A2B; text-decoration: none; padding: 10px 14px; border-radius: 12px">Mes missions</a><a href="espace-demandes.html" aria-current="page" style="display: inline-flex; align-items: center; color: #0F7A4F; text-decoration: none; padding: 10px 14px; border-radius: 12px; background: #E5F4EC">Demandes</a><a href="espace-transmissions.html" class="ige-nl2" style="display: inline-flex; align-items: center; color: #1B3A2B; text-decoration: none; padding: 10px 14px; border-radius: 12px">Transmissions</a><a href="espace-messages.html" class="ige-nl2" style="display: inline-flex; align-items: center; color: #1B3A2B; text-decoration: none; padding: 10px 14px; border-radius: 12px">Messages</a><a href="espace-dossiers.html" class="ige-nl2" style="display: inline-flex; align-items: center; color: #1B3A2B; text-decoration: none; padding: 10px 14px; border-radius: 12px">Dossiers</a></nav>
+<div style="display: flex; align-items: center; gap: 6px">
+<a href="#" aria-label="Mon profil : Mariem Mint Ahmed" style="display: inline-flex; width: 44px; height: 44px; border-radius: 50%; background: #F5C02F; color: #2E2300; font-size: 12px; font-weight: 800; align-items: center; justify-content: center; text-decoration: none">MA</a>
+<a href="index.html" aria-label="Se déconnecter" style="display: inline-flex; width: 44px; height: 44px; border-radius: 12px; align-items: center; justify-content: center; color: #1B3A2B"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"></path></svg></a>
+</div>
+</header>
+</div>
+<div style="position: relative; max-width: 1200px; margin: 0 auto; padding: 34px 24px 0; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 24px">
+<div style="display: flex; flex-direction: column; gap: 8px; min-width: 0">
+<nav aria-label="Fil d’Ariane" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #BFE3CF"><a href="espace-accueil.html" style="color: #BFE3CF; text-decoration: none">Accueil</a><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg><span style="color: #FFFFFF">Demandes</span></nav>
+<h1 style="margin: 0; font-weight: 800; font-size: clamp(26px, 3vw, 36px); line-height: 1.1; letter-spacing: -0.045em">Demandes</h1>
+<p style="margin: 0; font-size: 14.5px; color: #D3EEDF">6 demandes attendent une réponse de votre part.</p>
+</div>
+</div>
+</section>
+<main style="position: relative; z-index: 2; max-width: 1200px; margin: -64px auto 0; padding: 0 20px 72px; display: flex; flex-direction: column; gap: 16px">
+<div role="group" aria-label="Filtrer par état" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px">
+<button type="button" onClick="{{tp0}}" aria-pressed="{{ta0}}" style="{{ts0}}">
+<span style="flex: none; display: inline-flex; width: 44px; height: 44px; border-radius: 13px; background: #FFF5D1; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7A5A00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13l2.5-7h11L20 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"></path><path d="M4 13h5l1 2h4l1-2h5"></path></svg></span>
+<span style="display: flex; flex-direction: column; text-align: left"><b style="font-size: 22px; line-height: 1.1; letter-spacing: -0.03em">6</b><span style="font-size: 12.5px; font-weight: 700; color: #1B3A2B">À traiter</span><span style="font-size: 11px; color: #889A90">Dont 2 cette semaine</span></span></button>
+<button type="button" onClick="{{tp1}}" aria-pressed="{{ta1}}" style="{{ts1}}">
+<span style="flex: none; display: inline-flex; width: 44px; height: 44px; border-radius: 13px; background: #F1F6F3; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34493F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
+<span style="display: flex; flex-direction: column; text-align: left"><b style="font-size: 22px; line-height: 1.1; letter-spacing: -0.03em">2</b><span style="font-size: 12.5px; font-weight: 700; color: #1B3A2B">En examen</span><span style="font-size: 11px; color: #889A90">Reçues par l’IGE</span></span></button>
+<button type="button" onClick="{{tp2}}" aria-pressed="{{ta2}}" style="{{ts2}}">
+<span style="flex: none; display: inline-flex; width: 44px; height: 44px; border-radius: 13px; background: #0F7A4F; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg></span>
+<span style="display: flex; flex-direction: column; text-align: left"><b style="font-size: 22px; line-height: 1.1; letter-spacing: -0.03em">19</b><span style="font-size: 12.5px; font-weight: 700; color: #1B3A2B">Validées</span><span style="font-size: 11px; color: #889A90">Acceptées</span></span></button>
+<button type="button" onClick="{{tp3}}" aria-pressed="{{ta3}}" style="{{ts3}}">
+<span style="flex: none; display: inline-flex; width: 44px; height: 44px; border-radius: 13px; background: #E5F4EC; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F7A4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"></path><path d="M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"></path></svg></span>
+<span style="display: flex; flex-direction: column; text-align: left"><b style="font-size: 22px; line-height: 1.1; letter-spacing: -0.03em">27</b><span style="font-size: 12.5px; font-weight: 700; color: #1B3A2B">Toutes</span><span style="font-size: 11px; color: #889A90">Toutes missions</span></span></button>
+</div>
+<div class="dm-split">
+<section aria-label="Liste des demandes" style="min-width: 0; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 16px; background: #FFFFFF; border: 1px solid #E6ECE9">
+<b style="padding-left: 6px; font-size: 14px">{{flabel}}</b>
+<div style="display: flex; flex-wrap: wrap; gap: 10px"><label for="mf" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Filtrer par mission</label>
+<select id="mf" style="min-height: 44px; padding: 0 14px; border-radius: 12px; border: 0; background: #F3F6F4; font: inherit; font-size: 13px; font-weight: 600; color: #0B2A1C"><option>Toutes les missions</option><option>IGE-2026-041</option><option>IGE-2026-037</option></select><label for="dq" style="display: flex; align-items: center; gap: 10px; min-height: 44px; width: 220px; max-width: 100%; padding: 0 14px; border-radius: 12px; background: #F3F6F4; cursor: text"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#889A90" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Rechercher</span><input id="dq" type="search" placeholder="Rechercher une pièce" style="flex: 1; min-width: 0; border: 0; background: transparent; font: inherit; font-size: 13px; outline: none; min-height: 40px"></label></div>
+</div>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px">
+<li style="{{gW}}"><p style="display: flex; align-items: center; gap: 10px; margin: 8px 4px 0; font-size: 11.5px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #556B60"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F5C02F"></span>Cette semaine<span style="font-weight: 700; letter-spacing: 0; text-transform: none; color: #889A90">· 2</span></p></li>
+<li style="{{a1}}"><button type="button" onClick="{{pick0}}" aria-pressed="{{ap0}}" style="{{rs0}}">
+<span style="flex: none; width: 48px; height: 52px; border-radius: 13px; background: #F5C02F; color: #2E2300; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1"><b style="font-size: 17px">17</b><span style="font-size: 9.5px; font-weight: 800; text-transform: uppercase; margin-top: 3px">nov.</span></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; text-align: left"><b style="font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Relevés bancaires du 3ᵉ trimestre</b>
+<span style="display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; font-size: 11.5px; color: #556B60"><span style="padding: 1px 7px; border-radius: 6px; background: #F3F6F4; font-weight: 700; color: #34493F">IGE-2026-041</span><span style="font-weight: 700; color: #6B4E00">Dans 3 jours</span></span></span>
+<span style="flex: none"><span style="display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; white-space: nowrap; border: 1.5px dashed #9ED6B8; color: #34493F">À transmettre</span></span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9AAAA2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button></li>
+<li style="{{c1}}"><button type="button" onClick="{{pick1}}" aria-pressed="{{ap1}}" style="{{rs1}}">
+<span style="flex: none; width: 48px; height: 52px; border-radius: 13px; background: #F5C02F; color: #2E2300; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1"><b style="font-size: 17px">19</b><span style="font-size: 9.5px; font-weight: 800; text-transform: uppercase; margin-top: 3px">nov.</span></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; text-align: left"><b style="font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Contrats de marchés n° 12 à 18</b>
+<span style="display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; font-size: 11.5px; color: #556B60"><span style="padding: 1px 7px; border-radius: 6px; background: #F3F6F4; font-weight: 700; color: #34493F">IGE-2026-037</span><span style="font-weight: 700; color: #6B4E00">Dans 5 jours</span></span></span>
+<span style="flex: none"><span style="display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; white-space: nowrap; background: #F5C02F; color: #2E2300">Complément demandé</span></span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9AAAA2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button></li>
+<li style="{{gN}}"><p style="display: flex; align-items: center; gap: 10px; margin: 8px 4px 0; font-size: 11.5px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #556B60"><span style="width: 8px; height: 8px; border-radius: 50%; background: #9ED6B8"></span>Plus tard<span style="font-weight: 700; letter-spacing: 0; text-transform: none; color: #889A90">· 4</span></p></li>
+<li style="{{a2}}"><button type="button" onClick="{{pick2}}" aria-pressed="{{ap2}}" style="{{rs2}}">
+<span style="flex: none; width: 48px; height: 52px; border-radius: 13px; background: #FFF5D1; color: #6B4E00; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1"><b style="font-size: 17px">24</b><span style="font-size: 9.5px; font-weight: 800; text-transform: uppercase; margin-top: 3px">nov.</span></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; text-align: left"><b style="font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Rapports de suivi des chantiers</b>
+<span style="display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; font-size: 11.5px; color: #556B60"><span style="padding: 1px 7px; border-radius: 6px; background: #F3F6F4; font-weight: 700; color: #34493F">IGE-2026-037</span><span style="font-weight: 700; color: #6B4E00">Dans 10 jours</span></span></span>
+<span style="flex: none"><span style="display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; white-space: nowrap; border: 1.5px dashed #9ED6B8; color: #34493F">À transmettre</span></span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9AAAA2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button></li>
+<li style="{{a3}}"><button type="button" onClick="{{pick3}}" aria-pressed="{{ap3}}" style="{{rs3}}">
+<span style="flex: none; width: 48px; height: 52px; border-radius: 13px; background: #F3F6F4; color: #34493F; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1"><b style="font-size: 17px">02</b><span style="font-size: 9.5px; font-weight: 800; text-transform: uppercase; margin-top: 3px">déc.</span></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; text-align: left"><b style="font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">État des engagements au 30 septembre</b>
+<span style="display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; font-size: 11.5px; color: #556B60"><span style="padding: 1px 7px; border-radius: 6px; background: #F3F6F4; font-weight: 700; color: #34493F">IGE-2026-041</span><span style="font-weight: 700; color: #889A90">Dans 18 jours</span></span></span>
+<span style="flex: none"><span style="display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; white-space: nowrap; border: 1.5px dashed #9ED6B8; color: #34493F">À transmettre</span></span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9AAAA2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button></li>
+<li style="{{a4}}"><button type="button" onClick="{{pick4}}" aria-pressed="{{ap4}}" style="{{rs4}}">
+<span style="flex: none; width: 48px; height: 52px; border-radius: 13px; background: #F3F6F4; color: #34493F; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1"><b style="font-size: 17px">05</b><span style="font-size: 9.5px; font-weight: 800; text-transform: uppercase; margin-top: 3px">déc.</span></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; text-align: left"><b style="font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Liste des comptes bancaires ouverts</b>
+<span style="display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; font-size: 11.5px; color: #556B60"><span style="padding: 1px 7px; border-radius: 6px; background: #F3F6F4; font-weight: 700; color: #34493F">IGE-2026-041</span><span style="font-weight: 700; color: #889A90">Dans 21 jours</span></span></span>
+<span style="flex: none"><span style="display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; white-space: nowrap; border: 1.5px dashed #9ED6B8; color: #34493F">À transmettre</span></span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9AAAA2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button></li>
+<li style="{{a5}}"><button type="button" onClick="{{pick5}}" aria-pressed="{{ap5}}" style="{{rs5}}">
+<span style="flex: none; width: 48px; height: 52px; border-radius: 13px; background: #F3F6F4; color: #34493F; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1"><b style="font-size: 17px">09</b><span style="font-size: 9.5px; font-weight: 800; text-transform: uppercase; margin-top: 3px">déc.</span></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; text-align: left"><b style="font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Registre des immobilisations 2025</b>
+<span style="display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; font-size: 11.5px; color: #556B60"><span style="padding: 1px 7px; border-radius: 6px; background: #F3F6F4; font-weight: 700; color: #34493F">IGE-2026-041</span><span style="font-weight: 700; color: #889A90">Dans 25 jours</span></span></span>
+<span style="flex: none"><span style="display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; white-space: nowrap; border: 1.5px dashed #9ED6B8; color: #34493F">À transmettre</span></span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9AAAA2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button></li>
+<li style="{{gR}}"><p style="display: flex; align-items: center; gap: 10px; margin: 8px 4px 0; font-size: 11.5px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #556B60"><span style="width: 8px; height: 8px; border-radius: 50%; background: #0F7A4F"></span>En examen par l’IGE<span style="font-weight: 700; letter-spacing: 0; text-transform: none; color: #889A90">· 2</span></p></li>
+<li style="{{r1}}"><button type="button" onClick="{{pick6}}" aria-pressed="{{ap6}}" style="{{rs6}}">
+<span style="flex: none; width: 48px; height: 52px; border-radius: 13px; background: #E5F4EC; color: #0F7A4F; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1"><b style="font-size: 17px">10</b><span style="font-size: 9.5px; font-weight: 800; text-transform: uppercase; margin-top: 3px">nov.</span></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; text-align: left"><b style="font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Procès-verbal de réception des travaux</b>
+<span style="display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; font-size: 11.5px; color: #556B60"><span style="padding: 1px 7px; border-radius: 6px; background: #F3F6F4; font-weight: 700; color: #34493F">IGE-2026-037</span><span style="font-weight: 700; color: #889A90">Examen en cours</span></span></span>
+<span style="flex: none"><span style="display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; white-space: nowrap; background: #E5F4EC; color: #0F7A4F">Reçue · en examen</span></span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9AAAA2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button></li>
+<li style="{{r2}}"><button type="button" onClick="{{pick7}}" aria-pressed="{{ap7}}" style="{{rs7}}">
+<span style="flex: none; width: 48px; height: 52px; border-radius: 13px; background: #E5F4EC; color: #0F7A4F; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1"><b style="font-size: 17px">06</b><span style="font-size: 9.5px; font-weight: 800; text-transform: uppercase; margin-top: 3px">nov.</span></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; text-align: left"><b style="font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Budget initial 2025</b>
+<span style="display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; font-size: 11.5px; color: #556B60"><span style="padding: 1px 7px; border-radius: 6px; background: #F3F6F4; font-weight: 700; color: #34493F">IGE-2026-041</span><span style="font-weight: 700; color: #889A90">Examen en cours</span></span></span>
+<span style="flex: none"><span style="display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; white-space: nowrap; background: #E5F4EC; color: #0F7A4F">Reçue · en examen</span></span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9AAAA2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button></li>
+<li style="{{gV}}"><p style="display: flex; align-items: center; gap: 10px; margin: 8px 4px 0; font-size: 11.5px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #556B60"><span style="width: 8px; height: 8px; border-radius: 50%; background: #0F7A4F"></span>Validées récemment<span style="font-weight: 700; letter-spacing: 0; text-transform: none; color: #889A90">· 2</span></p></li>
+<li style="{{v1}}"><button type="button" onClick="{{pick8}}" aria-pressed="{{ap8}}" style="{{rs8}}">
+<span style="flex: none; width: 48px; height: 52px; border-radius: 13px; background: #E5F4EC; color: #0F7A4F; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1"><b style="font-size: 17px">12</b><span style="font-size: 9.5px; font-weight: 800; text-transform: uppercase; margin-top: 3px">nov.</span></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; text-align: left"><b style="font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Rapport financier 2024</b>
+<span style="display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; font-size: 11.5px; color: #556B60"><span style="padding: 1px 7px; border-radius: 6px; background: #F3F6F4; font-weight: 700; color: #34493F">IGE-2026-041</span><span style="font-weight: 700; color: #889A90">Acceptée</span></span></span>
+<span style="flex: none"><span style="display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; white-space: nowrap; background: #0F7A4F; color: #FFFFFF">✓ Validée</span></span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9AAAA2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button></li>
+<li style="{{v2}}"><button type="button" onClick="{{pick9}}" aria-pressed="{{ap9}}" style="{{rs9}}">
+<span style="flex: none; width: 48px; height: 52px; border-radius: 13px; background: #E5F4EC; color: #0F7A4F; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1"><b style="font-size: 17px">28</b><span style="font-size: 9.5px; font-weight: 800; text-transform: uppercase; margin-top: 3px">oct.</span></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; text-align: left"><b style="font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">Plan de passation des marchés</b>
+<span style="display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; font-size: 11.5px; color: #556B60"><span style="padding: 1px 7px; border-radius: 6px; background: #F3F6F4; font-weight: 700; color: #34493F">IGE-2026-037</span><span style="font-weight: 700; color: #889A90">Acceptée</span></span></span>
+<span style="flex: none"><span style="display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 800; white-space: nowrap; background: #0F7A4F; color: #FFFFFF">✓ Validée</span></span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9AAAA2" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg></button></li>
+</ul>
+</section>
+<aside aria-label="Détail de la demande" style="position: relative; min-width: 0">
+<div style="border-radius: 22px; background: #FFFFFF; border: 1px solid #E3EAE6; box-shadow: 0 8px 20px -14px rgba(6,59,38,0.3); overflow: hidden">
+<div style="padding: 22px 22px 18px; background: #F8FBF9; border-bottom: 1px solid #EDF2EF; display: flex; flex-direction: column; gap: 10px">
+<span style="display: flex; justify-content: space-between; align-items: center; gap: 8px"><span style="font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #889A90">Détail de la demande</span><span style="{{chipStyle}}">{{chipLabel}}</span></span>
+<h2 style="margin: 0; font-size: 19px; font-weight: 800; line-height: 1.25; letter-spacing: -0.02em">{{title}}</h2>
+<span style="font-size: 12.5px; color: #556B60">Mission {{ref}} · {{mis}}</span>
+</div>
+<div style="padding: 20px 22px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; gap: 12px; align-items: center"><span style="flex: none; display: inline-flex; width: 36px; height: 36px; border-radius: 10px; background: #F3F6F4; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F7A4F" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg></span><span style="display: flex; flex-direction: column; min-width: 0"><span style="font-size: 11.5px; color: #556B60">Échéance</span><b style="font-size: 13.5px">{{due}} · {{rel}}</b></span></div>
+<div style="display: flex; gap: 12px; align-items: center"><span style="flex: none; display: inline-flex; width: 36px; height: 36px; border-radius: 10px; background: #F3F6F4; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F7A4F" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"></circle><path d="M2.5 20c1-3.5 3.6-5.5 6.5-5.5s5.5 2 6.5 5.5M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5c1.5.8 2.6 2.6 3 5.5"></path></svg></span><span style="display: flex; flex-direction: column; min-width: 0"><span style="font-size: 11.5px; color: #556B60">Demandée par</span><b style="font-size: 13.5px">{{by}}</b></span></div>
+<div style="padding: 14px 16px; border-radius: 14px; background: #FFF8E3; display: flex; flex-direction: column; gap: 4px"><b style="font-size: 12.5px; color: #4A3800">Consigne de l’inspection</b><span style="font-size: 13.5px; line-height: 1.6; color: #2E2300">{{cons}}</span></div>
+<sc-if value="{{needAct}}" hint-placeholder-val="{{ true }}">
+<label for="dfile" style="position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-height: 120px; padding: 18px; border-radius: 16px; border: 1.5px dashed #9ED6B8; background: #F6FBF8; text-align: center; cursor: pointer">
+<span style="display: inline-flex; width: 42px; height: 42px; border-radius: 12px; background: #0F7A4F; align-items: center; justify-content: center"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4M7 9l5-5 5 5"></path><path d="M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"></path></svg></span>
+<span style="font-size: 13px; color: #34493F"><b style="color: #0F7A4F">Choisir un fichier</b> ou glissez-le ici</span><span style="font-size: 11.5px; color: #889A90">PDF, Word, Excel ou ZIP</span>
+<input id="dfile" type="file" style="position: absolute; width: 1px; height: 1px; opacity: 0"></label>
+<label for="dobs" style="font-size: 12.5px; font-weight: 700; color: #34493F">Observation <span style="font-weight: 500; color: #889A90">(facultatif)</span></label>
+<textarea id="dobs" rows="2" placeholder="Une précision pour l’équipe d’inspection…" style="margin-top: -8px; padding: 12px 14px; border-radius: 12px; border: 1.5px solid #E0EBE5; font: inherit; font-size: 13px; resize: vertical"></textarea>
+<button type="button" class="ige-btn" style="min-height: 50px; border: 0; border-radius: 14px; background: #0F7A4F; color: #FFFFFF; font: inherit; font-size: 14px; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 10px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V4M7 9l5-5 5 5"></path><path d="M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"></path></svg>{{act}}</button>
+</sc-if>
+<sc-if value="{{isDone}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; gap: 12px; align-items: center; padding: 14px 16px; border-radius: 14px; background: #E5F4EC; font-size: 13px; color: #0B4A31"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F7A4F" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"></path></svg><span>{{doneMsg}}</span></div>
+<a href="#" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; border-radius: 14px; background: #F3F6F4; color: #0B2A1C; font-size: 13.5px; font-weight: 700; text-decoration: none"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5 12 5s9.5 7 9.5 7-3.5 7-9.5 7-9.5-7-9.5-7z"></path><circle cx="12" cy="12" r="3"></circle></svg>Voir la pièce déposée</a>
+</sc-if>
+<a href="espace-messages.html" style="align-self: center; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: #0F7A4F; text-decoration: none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"></path></svg>Poser une question à l’inspecteur</a>
+</div></div></aside>
+</div>
+</main>
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer style="background: #063B26; color: #A9C9BB">
+<div style="max-width: 1200px; margin: 0 auto; padding: 48px 24px 36px; display: flex; flex-wrap: wrap; gap: 32px 48px">
+<div style="flex: 1.6 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<span style="display: flex; align-items: center; gap: 14px"><span style="display: inline-flex; padding: 7px; border-radius: 14px; background: #FFFFFF"><img src="assets/img/logo-igf-mark.png" alt="" style="width: 40px; height: 40px; display: block"></span>
+<span style="display: flex; flex-direction: column; gap: 5px; line-height: 1.15"><b style="font-size: 16px; color: #FFFFFF">IGF</b><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase">Portail des institutions</span></span></span>
+<p style="margin: 0; max-width: 320px; font-size: 13.5px; line-height: 1.6">L’espace officiel d’échange entre l’Inspection et les institutions contrôlées.</p>
+</div>
+<nav aria-label="Mon espace" style="flex: 1 1 150px; min-width: 0; display: flex; flex-direction: column; gap: 2px; font-size: 13.5px"><b style="font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #F5C02F; margin-bottom: 8px">Mon espace</b><a href="espace-accueil.html" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 5px 0">Tableau de bord</a><a href="espace-missions.html" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 5px 0">Mes missions</a><a href="espace-demandes.html" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 5px 0">Demandes</a><a href="espace-messages.html" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 5px 0">Messages</a><a href="espace-dossiers.html" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 5px 0">Dossiers</a></nav><nav aria-label="Compte" style="flex: 1 1 150px; min-width: 0; display: flex; flex-direction: column; gap: 2px; font-size: 13.5px"><b style="font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #F5C02F; margin-bottom: 8px">Compte</b><a href="#" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 5px 0">Mon profil</a><a href="#" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 5px 0">Changer le mot de passe</a><a href="index.html" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 5px 0">Se déconnecter</a></nav>
+<div style="flex: 1 1 230px; min-width: 0; display: flex; flex-direction: column; gap: 10px; padding: 18px; border-radius: 16px; background: rgba(255,255,255,0.06)">
+<b style="font-size: 14px; color: #FFFFFF">Assistance</b>
+<span style="display: flex; align-items: center; gap: 10px; font-size: 13px; color: #DCEBE4"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5C02F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg>[téléphone]</span>
+<span style="display: flex; align-items: center; gap: 10px; font-size: 13px; color: #DCEBE4"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5C02F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>[adresse email]</span>
+<span style="display: flex; align-items: center; gap: 10px; font-size: 13px; color: #DCEBE4"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F5C02F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>Nouakchott, Mauritanie</span>
+</div>
+</div>
+<div style="background: #052F1E">
+<div style="max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 24px; font-size: 12.5px">
+<span>© 2026 République Islamique de Mauritanie · Dernière connexion : 12 nov. 2026, 08:14</span>
+<nav aria-label="Liens légaux" style="display: flex; flex-wrap: wrap; gap: 4px 20px"><a href="#" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 6px 0">Mentions légales</a><a href="#" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 6px 0">Confidentialité</a><a href="#" class="s-fl" style="color: #DCEBE4; text-decoration: none; padding: 6px 0">Accessibilité</a></nav>
+<span style="font-size: 11px; font-weight: 800; letter-spacing: 0.14em; color: #F5C02F">HONNEUR · FRATERNITÉ · JUSTICE</span>
+</div></div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1400}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { f: 'todo', sel: 0 }; }
+  renderVals() { return (() => {
+      const mk = (defs, key, cur) => defs.map(([k, l]) => ({ label: l, sel: cur === k ? 'true' : 'false', pick: () => this.setState({ [key]: k }),
+        style: 'min-height:36px;padding:0 14px;border:0;border-radius:9px;font:inherit;font-size:12.5px;font-weight:700;cursor:pointer;white-space:nowrap;' + (cur === k ? 'background:#0F7A4F;color:#FFFFFF;' : 'background:transparent;color:#556B60;') }));
+      const show = (on) => on ? '' : 'display:none';
+      const cur = this.state.f || 'todo';
+      const tabs = [];
+      const names = { todo: 'À traiter', rec: 'En examen', val: 'Validées', all: 'Toutes les demandes' };
+      const tv = {}; ['todo','rec','val','all'].forEach((k, i) => { const on = cur === k;
+        tv['tp' + i] = () => this.setState({ f: k }); tv['ta' + i] = on ? 'true' : 'false';
+        tv['ts' + i] = 'display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:18px;font:inherit;color:#0B2A1C;cursor:pointer;transition:all .2s;' + (on ? 'background:#FFFFFF;border:2px solid #0F7A4F;box-shadow:0 8px 20px -14px rgba(6,59,38,.45);' : 'background:#FFFFFF;border:2px solid #E6ECE9;'); });
+      const T = cur === 'todo' || cur === 'all', R = cur === 'rec' || cur === 'all', V = cur === 'val' || cur === 'all';
+      const DD = [{"k": "att", "t": "Relevés bancaires du 3ᵉ trimestre", "ref": "IGE-2026-041", "mis": "Contrôle de l’exécution budgétaire 2025", "cons": "Tous les comptes ouverts au nom de l’institution, avec leurs annexes.", "due": "17 nov. 2026", "rel": "Dans 3 jours", "by": "Sidi Mohamed Ould Cheikh", "act": "Déposer"}, {"k": "com", "t": "Contrats de marchés n° 12 à 18", "ref": "IGE-2026-037", "mis": "Audit des marchés publics 2024", "cons": "Fournir les versions signées des contrats n° 15 et 16.", "due": "19 nov. 2026", "rel": "Dans 5 jours", "by": "Fatimetou Mint Salem", "act": "Compléter"}, {"k": "att", "t": "Rapports de suivi des chantiers", "ref": "IGE-2026-037", "mis": "Audit des marchés publics 2024", "cons": "Rapports mensuels de janvier à septembre 2024.", "due": "24 nov. 2026", "rel": "Dans 10 jours", "by": "Fatimetou Mint Salem", "act": "Déposer"}, {"k": "att", "t": "État des engagements au 30 septembre", "ref": "IGE-2026-041", "mis": "Contrôle de l’exécution budgétaire 2025", "cons": "Extrait du logiciel de gestion budgétaire.", "due": "2 déc. 2026", "rel": "Dans 18 jours", "by": "Sidi Mohamed Ould Cheikh", "act": "Déposer"}, {"k": "att", "t": "Liste des comptes bancaires ouverts", "ref": "IGE-2026-041", "mis": "Contrôle de l’exécution budgétaire 2025", "cons": "Avec numéros et banques de domiciliation.", "due": "5 déc. 2026", "rel": "Dans 21 jours", "by": "Sidi Mohamed Ould Cheikh", "act": "Déposer"}, {"k": "att", "t": "Registre des immobilisations 2025", "ref": "IGE-2026-041", "mis": "Contrôle de l’exécution budgétaire 2025", "cons": "Version à jour au 31 octobre.", "due": "9 déc. 2026", "rel": "Dans 25 jours", "by": "Sidi Mohamed Ould Cheikh", "act": "Déposer"}, {"k": "rec", "t": "Procès-verbal de réception des travaux", "ref": "IGE-2026-037", "mis": "Audit des marchés publics 2024", "cons": "Déposé le 10 nov. 2026 · version 1.", "due": "10 nov. 2026", "rel": "Examen en cours", "by": "Fatimetou Mint Salem", "act": ""}, {"k": "rec", "t": "Budget initial 2025", "ref": "IGE-2026-041", "mis": "Contrôle de l’exécution budgétaire 2025", "cons": "Déposé le 6 nov. 2026 · version 1.", "due": "6 nov. 2026", "rel": "Examen en cours", "by": "Sidi Mohamed Ould Cheikh", "act": ""}, {"k": "val", "t": "Rapport financier 2024", "ref": "IGE-2026-041", "mis": "Contrôle de l’exécution budgétaire 2025", "cons": "Validé le 12 nov. 2026.", "due": "12 nov. 2026", "rel": "Acceptée", "by": "Sidi Mohamed Ould Cheikh", "act": ""}, {"k": "val", "t": "Plan de passation des marchés", "ref": "IGE-2026-037", "mis": "Audit des marchés publics 2024", "cons": "Validé le 28 oct. 2026 · version 2.", "due": "28 oct. 2026", "rel": "Acceptée", "by": "Fatimetou Mint Salem", "act": ""}];
+      const sel = this.state.sel || 0; const it = DD[sel];
+      const CH = { att: ['À transmettre','border:1.5px dashed #9ED6B8;color:#34493F'], com: ['Complément demandé','background:#F5C02F;color:#2E2300'], rec: ['Reçue · en examen','background:#E5F4EC;color:#0F7A4F'], val: ['✓ Validée','background:#0F7A4F;color:#FFFFFF'] };
+      const rv = {};
+      DD.forEach((d, i) => { const on = i === sel;
+        rv['pick' + i] = () => this.setState({ sel: i }); rv['ap' + i] = on ? 'true' : 'false';
+        rv['rs' + i] = 'width:100%;display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:16px;font:inherit;color:#0B2A1C;cursor:pointer;transition:all .15s;' + (on ? 'background:#F2F8F5;border:1.5px solid #0F7A4F;' : 'background:#FFFFFF;border:1.5px solid #E6ECE9;'); });
+      const need = it.k === 'att' || it.k === 'com';
+      Object.assign(rv, { title: it.t, ref: it.ref, mis: it.mis, cons: it.cons, due: it.due, rel: it.rel, by: it.by, act: it.act || 'Déposer',
+        chipLabel: CH[it.k][0], chipStyle: 'display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:800;white-space:nowrap;' + CH[it.k][1],
+        needAct: need, isDone: !need, doneMsg: it.k === 'val' ? 'Pièce validée par l’équipe d’inspection.' : 'Pièce reçue. L’examen est en cours.' });
+      return { ...tv, ...rv, flabel: names[cur], gW: show(T), gN: show(T), a1: show(T), c1: show(T), a2: show(T), a3: show(T), a4: show(T), a5: show(T), gR: show(R), r1: show(R), r2: show(R), gV: show(V), v1: show(V), v2: show(V) };
+    })(); }
+}
+</script>
+</body>
+</html>
